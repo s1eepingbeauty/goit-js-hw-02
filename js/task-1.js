@@ -1,12 +1,27 @@
-const name = 'Генератор защитного поля';
-let price = 1000;
-
-let message = `Выбран «${name}», цена за штуку ${price} кредитов`;
-
-console.log(message);
-
-price = 2000;
-
-message = `Выбран «${name}», цена за штуку ${price} кредитов`;
-
-console.log(message);
+const getItemsString = function(array) {
+    'use strict';
+    // Write code under this line
+    let result = '';
+      for (let i = 0; i < array.length; i++) {
+          result += `${i+1} - ${array[i]}\n`;      
+      }
+    return result;
+  };
+  
+  console.log(getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']));
+  /*
+  '1 - Mango
+  2 - Poly
+  3 - Ajax
+  4 - Lux
+  5 - Jay
+  6 - Kong
+  '
+  */
+  console.log(getItemsString([5, 10, 15]));
+  /*
+  '1 - 5
+  2 - 10
+  3 - 15
+  '
+  */

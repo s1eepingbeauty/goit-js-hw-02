@@ -1,32 +1,25 @@
-let cost;
-let userCountry = prompt("В какую страну будет доставка?");
+function checkForSpam (message) { 
+    'use strict';
+    // Write code under this line
+    let str = message.toLowerCase();
+    let checkString = true;
 
-userCountry = userCountry.toLowerCase();
-let a = (userCountry.charAt(0)).toUpperCase();
-let deliveryCountry = userCountry.replace(userCountry.charAt(0), a);
-
-switch (deliveryCountry){
-    case 'Китай':
-         cost = 100;
-         alert (`Доставка в ${deliveryCountry} будет стоить ${cost} кредитов`);
-         break;
-    case 'Чили':
-        cost = 250;
-        alert (`Доставка в ${deliveryCountry} будет стоить ${cost} кредитов`);
-        break;
-    case 'Австралия':
-        cost = 170;
-        alert (`Доставка в ${deliveryCountry} будет стоить ${cost} кредитов`);
-        break;
-    case 'Индия':
-        cost = 80;
-        alert (`Доставка в ${deliveryCountry} будет стоить ${cost} кредитов`);
-        break;
-    case 'Ямайка':
-        cost = 120;
-        alert (`Доставка в ${deliveryCountry} будет стоить ${cost} кредитов`);
-        break;
-    default:
-        alert("В вашей стране доставка не доступна");
-}
-
+    if (str.includes('spam')){
+        checkString = true;
+    }
+    else if (str.includes('sale')) {
+        checkString = true;
+    }
+    else {
+        checkString = false;
+    }
+    return checkString;
+  }
+  
+  console.log(checkForSpam('Latest technology news')); // false
+  
+  console.log(checkForSpam('JavaScript weekly newsletter')); // false
+  
+  console.log(checkForSpam('Get best sale offers now!')); // true
+  
+  console.log(checkForSpam('[SPAM] How to earn fast money?')); // true

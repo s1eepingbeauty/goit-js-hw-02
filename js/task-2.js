@@ -1,6 +1,15 @@
-const total = 100;
-const ordered = 50;
+const calculateEngravingPrice = (message = "", pricePerWord = 0) => { 
+// Write code in this line
+    let arrayOfWords = message.split(' ');
+    let totalPrice = arrayOfWords.length * pricePerWord;
+    return totalPrice;
+};
+console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 10)); // 80
 
-const result = ordered > total ? 'На складе недостаточно товаров!' : 'Заказ оформлен, с вами свяжется менеджер'; 
+console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 20)); // 160
 
-console.log(result);
+console.log(calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40)); // 240
+
+console.log(calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20)); // 120
+
+console.log(calculateEngravingPrice('Uno', 100)); // 100

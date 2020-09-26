@@ -1,31 +1,17 @@
-const pricePerDroid = 3000;
-let credits = 23580;
-let totalPrice;
-let quantity;
-let message;
-
-do {
-    quantity = Number(prompt("Сколько дроидов желаете приобрести?"));
-    if (Number.isNaN(quantity) === true)
-    {
-        alert("Только целое число!");
+function formatString (string, maxLength = 40) {
+    // Write code under this line
+    let newString = string;
+    if (newString.length > maxLength) {
+        newString = newString.slice(0, maxLength) + '...';    
     }
-} while (Number.isNaN(quantity) === true)
-
-if (quantity > 0) {
-
-    totalPrice = pricePerDroid * quantity;
-
-    if (totalPrice < credits) {
-        credits -= totalPrice;
-        message = `Вы купили ${quantity} дроидов, на счету осталось ${credits} кредитов.`;
-    }
-    else {
-        message = "Недостаточно средств на счету!";
-    }
+   return newString; 
 }
-else {
-    message = "Отменено пользователем!";
-}
-
-alert (message);
+  
+  console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+  // 'Curabitur ligula sapien, tincidunt non.'
+  
+  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+  // 'Vestibulum facilisis, purus nec pulvinar...'
+  
+  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30));
+  // 'Vestibulum facilisis, purus ne...'
