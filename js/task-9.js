@@ -12,13 +12,11 @@ function isLoginValid (login, min = 4, max = 16) {
   function isLoginUnique  (allLogins, login) {
     'use strict';
     // Write code under this line
-    let checkLogin = true;
-    for (let i = 0; i < allLogins.length; i += 1) {
-        if (allLogins[i].includes(login) === true) {
-            checkLogin = false;
-        }
-    }
-    return checkLogin;
+      let checkLogin = true;
+          if (allLogins.includes(login) === true) {
+              checkLogin = false;
+          }
+      return checkLogin;
   }
   
   function addLogin (allLogins, login) {
@@ -28,14 +26,14 @@ function isLoginValid (login, min = 4, max = 16) {
     const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
     let message;
     // Write code under this line    
-    if (isLoginValid(login) === true && isLoginUnique(logins, login) === true) {      
-        logins.push(login);
+    if (isLoginValid(login) === true && isLoginUnique(allLogins, login) === true) {      
+        allLogins.push(login);
         message = SUCCESS;
     }
     else if (isLoginValid(login) === false) {
         message = ERROR;
     }
-    else if (isLoginUnique(logins, login) === false)
+    else if (isLoginUnique(allLogins, login) === false)
     {
         message = REFUSAL;
     }
